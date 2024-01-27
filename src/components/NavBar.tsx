@@ -1,6 +1,6 @@
 import { HStack, Image } from '@chakra-ui/react'
 import React from 'react'
-import logo from '../assets/tiktok-logo.webp'
+import logo from '../assets/google-play-games.webp'
 import ColorModeSwitch from './ColorModeSwitch'
 const NavBar = () => {
   return (
