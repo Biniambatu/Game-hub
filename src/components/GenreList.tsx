@@ -1,14 +1,22 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import useGenres from '../hooks/useGenres'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import useGenres from "../hooks/useGenres";
+import { HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
 
 const GenreList = () => {
-    const{genres} = useGenres()
+  const { genres } = useGenres();
   return (
-    <ul>
-      {genres.map(e=><li key={e.id} >{e.name}</li>)}
-    </ul>
-  )
-}
+    <List>
+      {genres.map((genre) => (
+        <ListItem key={genre.id} paddingY='5px'>
+          <HStack>
+            <Image boxSize='32px' borderRadius={8} src={ genre.image_background } ></Image>
+            <Text fontSize='lg'>{genre.name}</Text>
+          </HStack>
+        </ListItem>
+      ))}
+    </List>
+  );
+};
 
-export default GenreList
+export default GenreList;
