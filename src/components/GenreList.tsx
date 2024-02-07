@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useGenres from "../hooks/useGenres";
-import { HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
+import { HStack, Image, List, ListItem, Spinner, Text } from "@chakra-ui/react";
 
 const GenreList = () => {
-  const { genres } = useGenres();
+  const { genres, isLoading } = useGenres();
+
+  if(isLoading) return <Spinner/>
   return (
     <List>
       {genres.map((genre) => (
